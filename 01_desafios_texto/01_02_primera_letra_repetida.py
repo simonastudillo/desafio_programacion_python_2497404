@@ -1,17 +1,14 @@
-def primera_letra_repetida(texto):
+def firstLetterRepeted(text):
+  readedCharacters = []
+  text = text.lower()
+  text = text.replace(" ", "")
+  for character in text:
+    if character in readedCharacters:
+      return character
+    else:
+      readedCharacters.append(character)
+  return None
 
-    texto_minsucula = texto.lower()
-    texto_sin_espacios = texto_minsucula.replace(" ", "")
-    lista_letras = []
-    for letra in texto_sin_espacios:
-        if letra in lista_letras:
-            return letra
-        else:
-            lista_letras.append(letra)
-
-    return None
-
-
-
-print(primera_letra_repetida("saltar"))  # a
-print(primera_letra_repetida("me gusta"))   # None
+print(firstLetterRepeted("Hello World!"))  # {'l': 3, 'o': 2}
+print(firstLetterRepeted("Hola mundo!"))  # {'o': 2}
+print(firstLetterRepeted("hola"))  # None
