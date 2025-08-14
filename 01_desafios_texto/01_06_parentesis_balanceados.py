@@ -1,17 +1,17 @@
 def parentesis_balanceados(texto):
 
-    apertura = 0
+  balance = 0
 
-    for parentesis in texto:
-        if parentesis == "(":
-            apertura += 1
-        elif parentesis == ")":
-            apertura -= 1
+  for parentesis in texto:
+    if parentesis == "(":
+      balance += 1
+    elif parentesis == ")":
+      balance -= 1
+      
+    if balance < 0:
+      return False
 
-            if apertura < 0:
-                return False
-
-    return apertura == 0
+  return balance == 0
 
 
 print(parentesis_balanceados("((()))()"))
