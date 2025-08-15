@@ -1,3 +1,14 @@
+def search_repeted(list):
+  repetead_item = []
+  for item in list:
+    if (list.count(item) > 1 and item not in repetead_item):
+      repetead_item.append(item)
+  return repetead_item
+
+  
+print(search_repeted(["ana", "paco", "paco", "emilio", "javier", "ana"])) # ["paco", "ana"]
+print(search_repeted(["ana", "paco", "pacos", "emilio", "javier", "anita"])) # ["paco", "ana"]
+
 def encontrar_duplicados(lista):
 
     elementos_lista = []
@@ -14,3 +25,4 @@ def encontrar_duplicados(lista):
 
 
 print(encontrar_duplicados(["ana", "paco", "paco", "emilio", "javier", "ana"])) # ["paco", "ana"]
+print(search_repeted(["ana", "paco", "pacos", "emilio", "javier", "anita"])) # ["paco", "ana"]
