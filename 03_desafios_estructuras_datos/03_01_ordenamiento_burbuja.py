@@ -1,3 +1,21 @@
+def order_buble(number_list):
+  temporal = []
+  change = True
+  while change:
+    change = False
+    for i in range(len(number_list) - 1):
+      if number_list[i] > number_list[i + 1]:
+        temporal = number_list[i]
+        number_list[i] = number_list[i + 1]
+        number_list[i + 1] = temporal
+        change = True
+  return number_list
+
+print(order_buble([3,8,4,1,2])) # [1, 2, 3, 4, 8]
+
+
+
+
 def ordenamiento_burbuja(lista):
 
     for i in range(len(lista)):
