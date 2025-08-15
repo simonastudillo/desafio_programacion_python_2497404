@@ -7,6 +7,21 @@
 
 """
 
+def pascal_triangle(rows_count):
+   triangle = []
+   for row in range(rows_count):
+      triangle_row = []
+      for col in range(row + 1):
+         if col == 0 or col == row:
+            triangle_row.append(1)
+         else:
+            value = triangle[row - 1][col - 1] + triangle[row - 1][col]
+            triangle_row.append(value)
+      triangle.append(triangle_row)
+   return triangle
+
+print(pascal_triangle(6)) # [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
+
 
 def triangulo_pascal(cantidad_filas):
 
@@ -27,4 +42,4 @@ def triangulo_pascal(cantidad_filas):
         triangulo.append(fila)
     return triangulo
 
-print(triangulo_pascal(4)) # [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
+print(triangulo_pascal(6)) # [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
